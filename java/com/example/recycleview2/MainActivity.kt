@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -45,7 +46,7 @@ class MainActivity : ComponentActivity() {
 
 
         val recyclerView = RecyclerView(this).apply {
-            layoutManager = StaggeredGridLayoutManager(3, RecyclerView.VERTICAL).apply {
+            layoutManager = GridLayoutManager(this@MainActivity,3,RecyclerView.VERTICAL,false).apply {
 
             }
             adapter = ProfileRecycleAdapter(this@MainActivity,profileItemList)
