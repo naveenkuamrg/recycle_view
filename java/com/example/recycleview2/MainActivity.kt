@@ -48,8 +48,9 @@ class MainActivity : ComponentActivity() {
         val recyclerView = RecyclerView(this).apply {
 //            layoutManager = LinearLayoutManager(this@MainActivity).apply {
 //                orientation = RecyclerView.VERTICAL
-            layoutManager = GridLayoutManager(this@MainActivity,3,RecyclerView.VERTICAL,false).apply {
-//            layoutManager = StaggeredGridLayoutManager(3,RecyclerView.VERTICAL).apply {
+//            layoutManager = GridLayoutManager(this@MainActivity,3,RecyclerView.VERTICAL,false).apply {
+            layoutManager = StaggeredGridLayoutManager(3,RecyclerView.VERTICAL).apply {
+                gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_NONE
 
             }
             adapter = ProfileRecycleAdapter(this@MainActivity,profileItemList)
